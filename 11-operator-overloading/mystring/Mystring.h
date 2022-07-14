@@ -8,8 +8,13 @@ private:
 public:
   Mystring();
   Mystring(const char *s);
-  Mystring(const Mystring &source);
+  Mystring(const Mystring &source); // Copy ctor
+  Mystring(Mystring &&source);      // Move ctor
   ~Mystring();
+
+  Mystring &operator=(const Mystring &rhs); // Copy assignment
+  Mystring &operator=(Mystring &&rhs);      // Move assignment
+
   void display() const;
   int get_length() const;
   const char *get_str() const;
